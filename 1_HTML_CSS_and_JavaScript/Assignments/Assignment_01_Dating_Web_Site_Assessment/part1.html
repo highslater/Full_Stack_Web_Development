@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment: Dating Web Site Assessment Part 1</title>
+</head>
+
+
+<body>
+    <h1>Please Enter Your Details For Our Dating Website!</h1>
+
+    <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="get">
+
+        <fieldset>
+            <legend>Your face</legend>
+            <label for="avatar">Your image:</label>
+            <input type="file" id="avatar" name="avatar" required>
+            <br>
+            <label for="preview">Image preview:</label> <img src="" alt="" id="preview">
+        </fieldset>
+
+        <fieldset>
+            <legend>Your general details</legend>
+            <label for="fullname">Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your full name" autofocus required>
+            <br>
+            <label for="gender">Gender:</label>
+            <input type="radio" id="gender" name="gender" value="Male" required>
+            <label for="gender" id="gender">Male</label>
+            <input type="radio" id="gender" name="gender" value="Female" required>
+            <label for="gender" id="gender">Female</label>
+            <br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            <br>
+            <label for="birthday">Date of birth:</label>
+            <input type="date" id="birthday" name="birthday">
+            <br>
+            <label for="color">Favorite color:</label>
+            <input type="color" id="color" name="color">
+            <br>
+            <label for="countries">Which Country:</label>
+            <select id="countries" name="countries">
+                <option value="United States">United States</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Uraguay">Uraguay</option>
+                <option value="Brazil">Brazil</option>
+                <option value="no selection">no selection</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your indicators</legend>
+            <label for="height"> Height:</label>
+            <span class="red">Short</span>
+            <input type="range" id="height" name="height" min="0" max="100"><span class="purple">Tall</span>
+            <br>
+            <label for="salary">Salary:</label>
+            <span class="red">Poor</span>
+            <input type="range" id="salary" name="salary" min="0" max="100"><span class="purple">Rich</span>
+        </fieldset>
+
+        <fieldset>
+            <legend> Your Contact Information</legend>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Required" required>
+            <br>
+            <label for="tel">Mobile:</label>
+            <input type="tel" id="tel" name="tel">
+            <br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address"></textarea>
+            <br>
+            <label for="">Method of Contact:</label>
+            <input type="checkbox" id="contactEmail" name="contactEmail" value="Email">
+            <label for="contactEmail" id="contactEmail">Email</label>
+            <input type="checkbox" id="whatsapp" name="whatsapp" value="whatsapp">
+            <label for="whatsapp" id="whatsapp">Whatsapp</label>
+            <input type="checkbox" id="inapp" name="inapp" value="In-app chat">
+            <label for="inapp" id="inapp">In-app chat</label>
+            <br>
+        </fieldset>
+        <br>
+        <br>
+
+        <input type="submit" value="Send">
+    </form>
+</body>
+
+</html>

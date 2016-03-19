@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 2: Color Guessing Game</title>
+</head>
+<style>
+    div {
+        height: 150px;
+        width: 150px;
+    }
+    
+    h1 {
+        text-align: center;
+        line-height: 135px;
+        font-style: italic;
+    }
+</style>
+
+<body onload="do_game()">
+    <div id="colorHint">
+        <h1 id="textHint"></h1>
+    </div>
+    <script>
+        /*The Global Variables*/
+        var target_index,
+            guess_input_text,
+            finished = false,
+            guesses = 0,
+            guess_string = "guesses",
+            colors = ['blue', 'cyan', 'gold', 'gray', 'green', 'magenta', 'orange', 'red', 'white', 'yellow'];
+
+        /*The main game function - do_game()*/
+        function do_game() {
+            "use strict";
+            /*set the value of the global variable target_index to a random integer in range [0, colors.length -1]*/
+            target_index = Math.floor(Math.random() * colors.length);
+
+            /*DEBUGGING*/
+            document.getElementById('textHint').innerHTML = colors[target_index];
+            document.getElementById("colorHint").style.backgroundColor = colors[target_index];
+            /*DEBUGGING*/
+
+            /*Check the Input function - check_guess()*/
+            function check_guess() {
+                /*To check whether the players guess is: not in the colors array.*/
+                if (colors.indexOf(guess_input_text) === -1) {
+                    alert("Sorry I don't recognize your color.\n\n" +
+                        "Please try again.");
+                    return false;
+                }
+
+                /*To check whether the players guess is: too large.*/
+                if (guess_input_text > colors[target_index]) {
+                    alert("Sorry your guess is not correct\n\n" +
+                        "Hint: your color is alphabetically higher than mine.");
+                    return false;
+                }
+
+                /*To check whether the players guess is: too small.*/
+                if (guess_input_text < colors[target_index]) {
+                    alert("Sorry your guess is not correct\n\n" +
+                        "Hint: your color is alphabetically lower than mine.");
+                    return false;
+                }
+                return true;
+
+            }
+
+            /*A While Loop*/
+            while (!finished) {
+                guess_input_text = prompt("I am thinking of one of these colors: \n\n" + colors.join(' ,  ') + "\n\nWhat color am I thinking of?\n");
+                guesses += 1;
+                finished = check_guess();
+            }
+
+            /*Change background color*/
+            document.body.style.backgroundColor = colors[target_index];
+
+            /*DEBUGGING*/
+            document.getElementById("textHint").innerHTML = "Winner!";
+            /*DEBUGGING*/
+
+            /*correct for 1 guess*/
+            if (guesses === 1) {
+                guess_string = "guess";
+            }
+
+            /*Correct!
+            Give feedback to user*/
+            alert("Congratulations you have guessed the color!" +
+                ".\n\nIt took you " + guesses + " " + guess_string +
+                " " + "to finish the game!\n\n" +
+                "You can see the color in the background.\n");
+        }
+    </script>
+</body>
+
+</html>

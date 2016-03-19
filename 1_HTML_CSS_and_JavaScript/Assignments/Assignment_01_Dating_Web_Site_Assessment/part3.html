@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment: Dating Web Site Assessment Part 3</title>
+</head>
+<style>
+    body {
+        background: #7fbab5;
+    }
+    
+    h1,
+    h2,
+    h3,
+    label,
+    input[type=submit] {
+        color: #024a45;
+    }
+    
+    fieldset {
+        border: 3px solid cadetblue;
+        margin-bottom: 10px;
+        width: 720px;
+    }
+    
+    fieldset,
+    legend {
+        background: #b6f9f4;
+    }
+    
+    label {
+        width: 180px;
+        display: inline-block;
+        text-align: right;
+        vertical-align: top;
+    }
+    
+    input,
+    select,
+    textarea {
+        background: #e4f6f5;
+        border-color: cadetblue;
+        color: #024a45;
+    }
+    
+    label:hover,
+    input:hover {
+        font-size: 20px;
+    }
+    
+    label[for="preview"]:hover + img[id="preview"] {
+        width: 10%;
+    }
+    
+    textarea {
+        width: 360px;
+        height: 50px;
+    }
+    
+    textarea:hover {
+        width: 440px;
+        height: 80px;
+    }
+    
+    span {
+        display: inline-block;
+        height: 19px;
+        width: 50px;
+        text-align: center;
+        vertical-align: top;
+        margin: 0px 5px;
+        padding: 3px;
+    }
+    
+    input[type=color]:hover {
+        width: 100px;
+        height: 30px;
+    }
+    
+    input[type=range]:hover,
+    select:hover {
+        width: 200px;
+        height: 30px;
+    }
+    
+    img {
+        width: 5%;
+    }
+    
+    input[type=submit] {
+        background: lightblue;
+        font-size: 20px;
+    }
+    
+    input[type=submit]:hover {
+        font-size: 30px;
+    }
+    
+    .autoWidth {
+        width: auto;
+    }
+    
+    .spColor {
+        background: #0a534d;
+        color: #e4f6f5;
+    }
+</style>
+
+<body>
+    <h1>Please Enter Your Details !</h1>
+    <h2>For Our Dating Website</h2>
+
+    <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="get">
+
+        <fieldset>
+            <legend>
+                <h3>Your face</h3></legend>
+            <label for="avatar">Your image:</label>
+            <input type="file" id="avatar" name="avatar" required>
+            <br>
+
+            <label for="preview">Image preview:</label>
+            <img src="#" alt="" id="preview" name="preview">
+
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h3>Your general details</h3></legend>
+            <label for="fullname">Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your full name" autofocus required>
+            <br>
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male" class="autoWidth">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="female" class="autoWidth">Female</label>
+            <br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" max="101" required>
+            <br>
+            <label for="birthday">Date of birth:</label>
+            <input type="date" id="birthday" name="birthday">
+            <br>
+            <label for="color">Favorite color:</label>
+            <input type="color" id="color" name="color">
+            <br>
+            <label for="countries">Which Country:</label>
+            <select id="countries" name="countries">
+                <option value="no selection">no selection</option>
+                <option value="United States">United States</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Uraguay">Uraguay</option>
+                <option value="Brazil">Brazil</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h3>Your indicators</h3></legend>
+            <label for="height"> Height:</label>
+            <span class="spColor">Short</span>
+            <input type="range" id="height" name="height" min="0" max="100"><span class="spColor">Tall</span>
+            <br>
+            <br>
+            <label for="salary">Salary:</label>
+            <span class="spColor">Poor</span>
+            <input type="range" id="salary" name="salary" min="0" max="100"><span class="spColor">Rich</span>
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h3>Your Contact Information</h3></legend>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Required" required>
+            <br>
+            <br>
+            <label for="tel">Mobile:</label>
+            <input type="tel" id="tel" name="tel">
+            <br>
+            <br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address"></textarea>
+            <br>
+            <br>
+            <label for="">Method of Contact:</label>
+            <input type="checkbox" id="contactEmail" name="contactEmail" value="Email">
+            <label for="contactEmail" class="autoWidth">Email</label>
+            <input type="checkbox" id="whatsapp" name="whatsapp" value="whatsapp">
+            <label for="whatsapp" class="autoWidth">Whatsapp</label>
+            <input type="checkbox" id="inapp" name="inapp" value="In-app chat">
+            <label for="inapp" class="autoWidth">In-app chat</label>
+            <br>
+        </fieldset>
+        <br>
+        <br>
+        <input type="submit" value="Send">
+    </form>
+    <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 2: Color Guessing Game</title>
+</head>
+<style>
+    div {
+        height: 150px;
+        width: 150px;
+    }
+    
+    h1 {
+        text-align: center;
+        padding-top: 50px;
+    }
+</style>
+
+<body onload="do_game()">
+
+    <div id="colorHint">
+        <h1 id="textHint">HINT</h1>
+    </div>
+    <script>
+        /*The Global Variables*/
+        var target_index,
+            guess_input_text,
+            guess_string = "guesses",
+            colors = ['blue', 'cyan', 'gold', 'gray', 'green', 'magenta', 'orange', 'red', 'white', 'yellow'];
+
+        /*The main game function - do_game()*/
+        function do_game() {
+            "use strict";
+            /*set the value of the global variable target_index to a random integer in range [0, colors.length -1]*/
+            target_index = Math.floor(Math.random() * colors.length);
+
+            /*DEBUGGING*/
+            document.getElementById('textHint').innerHTML = colors[target_index];
+            document.getElementById("colorHint").style.backgroundColor = colors[target_index];
+            /*DEBUGGING*/
+
+            /*A While Loop*/
+            while (guess_input_text != colors[target_index]) {
+                guess_input_text = prompt("I am thinking of one of these colors: \n\n" + colors.join(' ,  ') + "\n\nWhat color am I thinking of?\n");
+            }
+        }
+    </script>
+</body>
+
+</html>
